@@ -14,8 +14,8 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <SurfaceView
-            android:id="@+id/surfaceView2"
+        <up.edu.raindrops.RainyDay
+            android:id="@+id/theRain"
             android:layout_width="match_parent"
             android:layout_height="700dp" />
 
