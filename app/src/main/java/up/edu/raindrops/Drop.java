@@ -15,20 +15,22 @@ public class Drop {
     protected int radius = 30;
     protected Paint myPaint;
     protected Random gen = new Random();
+    protected int invisible = Color.argb(0,0,0,0);
+    protected int r = gen.nextInt(256);
+    protected int g = gen.nextInt(256);
+    protected int b = gen.nextInt(256);
+    protected int color = Color.rgb(r,g,b);
 
     //Generate a random color for a Drop, set the paint instance variable to this color
 
-    protected void setRandDrop(){
-        int color = Color.rgb(gen.nextInt(256),gen.nextInt(256),gen.nextInt(256));
-        myPaint = new Paint();
-        myPaint.setColor(color);
-    }
+
 
     //Create a drop with random coordinates within the layout border
     public Drop() {
         x = gen.nextInt(1280);
         y = gen.nextInt(680);
-        setRandDrop();
+        myPaint = new Paint();
+        myPaint.setColor(color);
     }
     public void draw(Canvas canvas){
         canvas.drawCircle(x,y,radius,myPaint);
@@ -39,6 +41,36 @@ public class Drop {
     public void setY(int y){
         this.y = y;
     }
+    public void setInvisible() {
+        myPaint.setColor(invisible);
+    }
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
+    //helper methods to edit colors
+    public void setColor(int r, int g, int b){
+        int newColor = Color.rgb(r,g,b);
+        myPaint.setColor(newColor);
+    }
+    public int getR(){
+        return r;
+    }
+    public int getG(){
+        return g;
+    }
+    public int getB(){
+        return b;
+    }
+    //Blends the rgb values of two drops, using helper methods defined above
+    public void blendColor(Drop a){
+        setColor(r+a.getR()/2,g+a.getG()/2,b+a.getB()/2);
+    }
+
+
+
 
 
 }

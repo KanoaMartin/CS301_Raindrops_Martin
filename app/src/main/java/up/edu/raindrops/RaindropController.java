@@ -19,15 +19,17 @@ public class RaindropController implements SeekBar.OnSeekBarChangeListener {
         return primeY;
     }
 
-
+    //compares seekbars to determine movement
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         if(seekBar.getId() == R.id.horizontalSlider){
             myRainyDay.setPrimeX(progress);
+            myRainyDay.checkTouches();
             myRainyDay.invalidate();
         }
         if(seekBar.getId() == R.id.verticalSlider){
             myRainyDay.setPrimeY(progress);
+            myRainyDay.checkTouches();
             myRainyDay.invalidate();
         }
     }
