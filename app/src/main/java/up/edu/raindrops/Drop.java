@@ -27,7 +27,7 @@ public class Drop {
     //Create a drop with random coordinates within the layout border
     public Drop() {
         x = gen.nextInt(1280);
-        y = gen.nextInt(700);
+        y = gen.nextInt(680);
         setRandDrop();
     }
     public void draw(Canvas canvas){
