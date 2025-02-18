@@ -33,5 +33,12 @@ public class Drop {
     public void draw(Canvas canvas){
         canvas.drawCircle(x,y,radius,myPaint);
     }
+    public void setX(int x){
+        this.x = x;
+    }
+    public void setY(int y){
+        this.y = y;
+    }
+
 
 }
